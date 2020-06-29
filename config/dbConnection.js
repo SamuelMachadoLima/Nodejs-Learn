@@ -1,7 +1,7 @@
 var mysql = require('mysql');
 
 var connMySQL = function () {
-    console.log("conectou com o banco");
+    console.log("Conexão BD realizada.");
     return mysql.createConnection({
         host: 'localhost',
         user: 'root',
@@ -11,6 +11,5 @@ var connMySQL = function () {
 }
 
 module.exports = function () {
-    console.log("chamou o dbConnection");
     return connMySQL;
 };
