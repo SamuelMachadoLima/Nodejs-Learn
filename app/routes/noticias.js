@@ -1,9 +1,11 @@
-module.exports = function (app) {
-    app.get('/noticias', function (req, res) {
-        var connection = app.config.dbConnection();
+module.exports = function (application) {
+    application.get('/noticias', function (req, res) {
+        var connection = application.config.dbConnection();
+        var noticias = application.app.models.noticiasModel;
 
-        connection.query("SELECT * FROM noticias", function (error, result) {
+        noticias.getNoticias(connection, function (error, result) {
             res.render('noticias/noticias', { noticias: result });
         });
+
     });
 }
