@@ -7,7 +7,7 @@ Noticias.prototype.getNoticias = function(callback){
 };
 
 Noticias.prototype.getNoticia = function(callback){
-    this._connection.query("SELECT * FROM noticias WHERE id_noticia = 2", callback);
+    this._connection.query("SELECT * FROM noticias WHERE id_noticia = 9", callback);
 };
 
 Noticias.prototype.salvarNoticia = function(noticia, callback){
